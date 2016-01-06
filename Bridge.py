@@ -7,9 +7,6 @@ class Bridge(Scene):
     def __init__(self, choices):
         super(Bridge, self).__init__(choices)
 
-    def enter(self, name):
-        super(Bridge, self).enter(name)
-
     def play(self):
         while True:
             choice = self.get_choice()
@@ -23,6 +20,7 @@ class Bridge(Scene):
                 print "Invalid choice"
 
 if __name__ == '__main__':
+    # tiny bridge test driver
     name = raw_input('Enter your name: ')
     bridge_scene = Bridge(["Jump", "Cross"])
     bridge_scene.enter(name)
