@@ -3,19 +3,15 @@ from Scene import *
 
 # bridge is also a scene
 class Bridge(Scene):
-
-    def __init__(self, choices):
-        super(Bridge, self).__init__(choices)
-
     def play(self):
         while True:
             choice = self.get_choice()
             if "Jump" == choice:
                 print "Oops, you died"
-                break
+                return False
             elif "Cross" == choice:
                 print "Great, you crossed"
-                break
+                return True
             else:
                 print "Invalid choice"
 
