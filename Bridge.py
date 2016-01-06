@@ -3,4 +3,7 @@ from Scene import *
 
 # bridge is also a scene
 class Bridge(Scene):
-    pass
+    def enter(self, name):
+        super(Bridge, self).enter(name)
+        choices = []
+
