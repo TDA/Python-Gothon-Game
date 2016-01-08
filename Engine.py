@@ -1,10 +1,18 @@
 __author__ = 'saipc'
 
+from Map import *
+from Bridge import *
+from Corridor import *
+from Death import *
+from EscapePod import *
+from WeaponArmory import *
+
 
 class Engine(object):
 
     def __init__(self, scene):
         # needs to initialize the map
+        self.map = Map()
         pass
 
     def play(self):
