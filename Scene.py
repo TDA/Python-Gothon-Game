@@ -22,4 +22,8 @@ class Scene(object):
         choice = raw_input("Enter the choice: ")
         return choice
 
+    def get_next_scene(self, scene = None):
+        # please override this!
+        pass
+
 

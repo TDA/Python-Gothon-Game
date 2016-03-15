@@ -34,7 +34,7 @@ class Engine(object):
             if is_to_proceed == None:
                 # means game over, exit
                 exit(0)
-            if is_to_proceed == True:
+            elif is_to_proceed == True:
                 scene = scenes[scene.get_next_scene()](None, name) # move to the next scene
             else:
                 scene = Death(None, name) # will auto exit on next iteration

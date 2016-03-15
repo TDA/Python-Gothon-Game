@@ -20,7 +20,7 @@ class Bridge(Scene):
                 print "Oops, you died"
                 return False
             elif self.choices[1] == choice:
-                print "Great, you crossed"
+                print "Great, you may pass"
                 return True
             else:
                 print "Invalid choice, choose again"

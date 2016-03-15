@@ -6,7 +6,6 @@ from Scene import *
 class Death(Scene):
     # death scene doesnt have choices or anything
     # so override
-
     def list_choices(self):
         pass
 
