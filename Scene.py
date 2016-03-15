@@ -17,6 +17,9 @@ class Scene(object):
             print x, '. ', choice
             x += 1
 
+    def move_next_scene(self, scene):
+        self.next_scene = scene
+
     # this also belongs in the base class
     def get_choice(self):
         choice = raw_input("Enter the choice: ")

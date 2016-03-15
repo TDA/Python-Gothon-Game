@@ -1,5 +1,9 @@
 __author__ = 'saipc'
 from Scene import *
+from EscapePod import *
+from WeaponArmory import *
+from random import * # for choice()
+from Bridge import *
 # corridor is a scene
 class Corridor(Scene):
     def play(self):
@@ -14,6 +18,10 @@ class Corridor(Scene):
             else:
                 print "Invalid choice"
 
+    def move_next_scene(self, scene = None):
+        scene = scene or choice([Bridge, WeaponArmory, EscapePod])
+        super(Corridor, self).move_next_scene(scene)
+
 if __name__ == '__main__':
     # tiny bridge test driver
     name = raw_input('Enter your name: ')
@@ -21,3 +29,5 @@ if __name__ == '__main__':
     corridor_scene.enter()
     corridor_scene.list_choices()
     corridor_scene.play()
+    corridor_scene.move_next_scene()
+    print(corridor_scene.next_scene)
