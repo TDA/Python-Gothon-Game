@@ -18,7 +18,7 @@ class Scene(object):
             x += 1
 
     def move_next_scene(self, scene):
-        self.next_scene = scene
+        return scene
 
     # this also belongs in the base class
     def get_choice(self):

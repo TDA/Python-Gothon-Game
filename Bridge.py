@@ -1,9 +1,9 @@
 __author__ = 'saipc'
 from Scene import *
-
-from Corridor import *
-from EscapePod import *
-from WeaponArmory import *
+#
+# from Corridor import Corridor
+# from EscapePod import EscapePod
+# from WeaponArmory import WeaponArmory
 from random import * # for choice()
 
 # bridge is also a scene
@@ -11,10 +11,10 @@ class Bridge(Scene):
     def play(self):
         while True:
             choice = self.get_choice()
-            if "Jump" == choice:
+            if self.choices[0] == choice:
                 print "Oops, you died"
                 return False
-            elif "Cross" == choice:
+            elif self.choices[1] == choice:
                 print "Great, you crossed"
                 return True
             else:

@@ -1,7 +1,9 @@
-__author__ = 'saipc'
-
 from Scene import *
+# from Bridge import Bridge
+# from Corridor import Corridor
+# from WeaponArmory import WeaponArmory
 from random import *
+__author__ = 'saipc'
 
 # EscapePod is the final scene
 class EscapePod(Scene):
@@ -24,6 +26,10 @@ class EscapePod(Scene):
             else:
                 print "Oops, wrong Pod, gg."
                 return False
+
+    def move_next_scene(self, scene = None):
+        scene = scene or choice([Corridor, WeaponArmory, Bridge])
+        super(EscapePod, self).move_next_scene(scene)
 
 if __name__ == '__main__':
     # tiny bridge test driver
