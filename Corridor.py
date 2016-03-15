@@ -7,6 +7,11 @@ from random import * # for choice()
 
 # corridor is a scene
 class Corridor(Scene):
+
+    def __init__(self, choices=None, name=None):
+        choices = choices or ["Left", "Right"]
+        super(Corridor, self).__init__(choices, name)
+
     def play(self):
         while True:
             choice = self.get_choice()
@@ -17,11 +22,12 @@ class Corridor(Scene):
                 print "Great, you move to the next stage"
                 return True
             else:
-                print "Invalid choice"
+                print "Invalid choice, choose again"
 
-    def move_next_scene(self, scene = None):
-        scene = scene or choice([Bridge, WeaponArmory, EscapePod])
-        super(Corridor, self).move_next_scene(scene)
+    def get_next_scene(self, scene = None):
+        scene = scene or choice([1, 3, 4])
+        return scene
+
 
 if __name__ == '__main__':
     # tiny bridge test driver
@@ -30,5 +36,5 @@ if __name__ == '__main__':
     corridor_scene.enter()
     corridor_scene.list_choices()
     corridor_scene.play()
-    corridor_scene.move_next_scene()
-    print(corridor_scene.next_scene)
+    # corridor_scene.move_next_scene()
+    # print(corridor_scene.next_scene)

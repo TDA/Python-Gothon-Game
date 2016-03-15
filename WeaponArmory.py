@@ -1,12 +1,16 @@
+from random import choice
+
 __author__ = 'saipc'
 
 from Scene import Scene
-from Corridor import Corridor
-from EscapePod import EscapePod
-from Bridge import Bridge
 
 # WeaponArmory is a Scene
 class WeaponArmory(Scene):
+
+    def __init__(self, choices=None, name=None):
+        choices = choices or ["Sword", "Gun"]
+        super(WeaponArmory, self).__init__(choices, name)
+
     def play(self):
         while True:
             choice = self.get_choice()
@@ -15,14 +19,14 @@ class WeaponArmory(Scene):
                 return True
             elif self.choices[1] == choice:
                 print "Ouch, you need to work better"
-                return True
+                return False
             else:
-                print "Invalid choice"
+                print "Invalid choice, choose again"
 
 
-    def move_next_scene(self, scene = None):
-        scene = scene or choice([Bridge, Corridor, EscapePod])
-        super(WeaponArmory, self).move_next_scene(scene)
+    def get_next_scene(self, scene = None):
+        scene = scene or choice([1, 2, 4])
+        return scene
 
 if __name__ == '__main__':
     # tiny bridge test driver

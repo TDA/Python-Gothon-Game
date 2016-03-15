@@ -6,6 +6,7 @@ from Scene import *
 class Death(Scene):
     # death scene doesnt have choices or anything
     # so override
+
     def list_choices(self):
         pass
 
@@ -14,7 +15,7 @@ class Death(Scene):
 
     def enter(self):
         print "Oops, looks like you chose the wrong way :("
-        print "Sorry %s, but Game Over" % (name)
+        print "Sorry %s, but Game Over" % (self.name)
         # should also print points
         # print "You scored %d points" % points
         exit(0)

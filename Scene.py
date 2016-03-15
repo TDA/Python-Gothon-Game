@@ -2,7 +2,7 @@ __author__ = 'saipc'
 
 class Scene(object):
 
-    def __init__(self, choices, name):
+    def __init__(self, choices = None, name = None):
         self.choices = choices
         self.name = name
 
@@ -16,9 +16,6 @@ class Scene(object):
         for choice in self.choices:
             print x, '. ', choice
             x += 1
-
-    def move_next_scene(self, scene):
-        return scene
 
     # this also belongs in the base class
     def get_choice(self):

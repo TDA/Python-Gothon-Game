@@ -8,6 +8,13 @@ from Death import Death
 from EscapePod import EscapePod
 from WeaponArmory import WeaponArmory
 
+scenes = [
+    None, # to fill for 0
+    Bridge,
+    Corridor,
+    WeaponArmory,
+    EscapePod
+]
 
 class Engine(object):
 
@@ -19,14 +26,16 @@ class Engine(object):
     def play(self):
         Start_Class= choice([Bridge, Corridor, WeaponArmory, EscapePod])
         name = raw_input('Enter your name: ')
-        scene = Start_Class(["Jump", "Cross"], name)
-        done = False
-        while scene != None and done != True:
+        scene = Start_Class(None, name)
+        while scene != None:
             scene.enter()
             scene.list_choices()
             is_to_proceed = scene.play()
-            if is_to_proceed:
-                scene = scene.move_next_scene(None) # move to the next scene
+            if is_to_proceed == None:
+                # means game over, exit
+                exit(0)
+            if is_to_proceed == True:
+                scene = scenes[scene.get_next_scene()](None, name) # move to the next scene
             else:
                 scene = Death(None, name) # will auto exit on next iteration
 
