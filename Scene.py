@@ -2,12 +2,13 @@ __author__ = 'saipc'
 
 class Scene(object):
 
-    def __init__(self, choices):
+    def __init__(self, choices, name):
         self.choices = choices
+        self.name = name
 
-    def enter(self, name):
+    def enter(self):
         # this will automatically print the name of the class of which its an instance :D
-        print 'Welcome %s to the %s. What do you choose?' % (name, self.__class__.__name__)
+        print 'Welcome to the %s, %s. What do you choose?' % (self.__class__.__name__, self.name)
 
     # let each scene have choices to make
     def list_choices(self):

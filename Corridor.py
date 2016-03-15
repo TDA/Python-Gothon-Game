@@ -17,7 +17,7 @@ class Corridor(Scene):
 if __name__ == '__main__':
     # tiny bridge test driver
     name = raw_input('Enter your name: ')
-    corridor_scene = Corridor(["Left", "Right"])
-    corridor_scene.enter(name)
+    corridor_scene = Corridor(["Left", "Right"], name)
+    corridor_scene.enter()
     corridor_scene.list_choices()
     corridor_scene.play()

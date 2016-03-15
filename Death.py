@@ -12,7 +12,7 @@ class Death(Scene):
     def get_choice(self):
         pass
 
-    def enter(self, name):
+    def enter(self):
         print "Oops, looks like you chose the wrong way :("
         print "Sorry %s, but Game Over" % (name)
         # should also print points
@@ -23,6 +23,6 @@ class Death(Scene):
 if __name__ == '__main__':
     # tiny bridge test driver
     name = raw_input('Enter your name: ')
-    death_scene = Death(None)
-    death_scene.enter(name)
+    death_scene = Death(None, name)
+    death_scene.enter()
 

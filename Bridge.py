@@ -18,7 +18,7 @@ class Bridge(Scene):
 if __name__ == '__main__':
     # tiny bridge test driver
     name = raw_input('Enter your name: ')
-    bridge_scene = Bridge(["Jump", "Cross"])
-    bridge_scene.enter(name)
+    bridge_scene = Bridge(["Jump", "Cross"], name)
+    bridge_scene.enter()
     bridge_scene.list_choices()
     bridge_scene.play()

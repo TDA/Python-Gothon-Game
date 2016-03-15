@@ -19,7 +19,7 @@ class WeaponArmory(Scene):
 if __name__ == '__main__':
     # tiny bridge test driver
     name = raw_input('Enter your name: ')
-    weapon_armory_scene = WeaponArmory(["Sword", "Gun"])
-    weapon_armory_scene.enter(name)
+    weapon_armory_scene = WeaponArmory(["Sword", "Gun"], name)
+    weapon_armory_scene.enter()
     weapon_armory_scene.list_choices()
     weapon_armory_scene.play()

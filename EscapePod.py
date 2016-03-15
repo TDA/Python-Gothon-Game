@@ -3,17 +3,17 @@ __author__ = 'saipc'
 from Scene import *
 from random import *
 
-# EscapePod is a scene
+# EscapePod is the final scene
 class EscapePod(Scene):
 
-    def __init__(self, choices = None):
+    def __init__(self, name):
         choices = []
         x = 'Pod' + str(randint(10, 50))
         y = 'Pod' + str(randint(51, 100))
         choices.extend([x, y])
         # choice is from random
         self.right_choice = choice(choices)
-        super(EscapePod, self).__init__(choices)
+        super(EscapePod, self).__init__(choices, name)
 
     def play(self):
         while True:
@@ -28,7 +28,7 @@ class EscapePod(Scene):
 if __name__ == '__main__':
     # tiny bridge test driver
     name = raw_input('Enter your name: ')
-    escape_pod_scene = EscapePod()
-    escape_pod_scene.enter(name)
+    escape_pod_scene = EscapePod(name)
+    escape_pod_scene.enter()
     escape_pod_scene.list_choices()
     escape_pod_scene.play()

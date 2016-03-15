@@ -12,10 +12,11 @@ class Engine(object):
 
     def __init__(self, scene):
         # needs to initialize the map
-        self.map = Map()
+        self.map = scene
         pass
 
     def play(self):
+
         pass
 
 if __name__ =='__main__':
